@@ -16,10 +16,11 @@
 
 
 fetch('https://api.github.com/graphql', {
+    // mode: 'no-cors',
     method: 'POST',
     headers: {
         "Content-Type": "application/json",
-        Authorization: 'bearer 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'
+        Authorization: 'bearer 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'
     },
     body: JSON.stringify({
         query: `
