@@ -9,11 +9,10 @@ const repoList = document.querySelector('#repo-list');
 
 
 fetch('https://api.github.com/graphql', {
-    // mode: 'no-cors',
     method: 'POST',
     headers: {
         "Content-Type": "application/json",
-        Authorization: 'bearer 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'
+        Authorization: 'bearer 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'
     },
     body: JSON.stringify({
         query: `
@@ -21,7 +20,6 @@ fetch('https://api.github.com/graphql', {
   user(login: "ireade") {
     avatarUrl
     bio
-    bioHTML
     name
     repositories(first: 20, orderBy: {field: UPDATED_AT, direction: DESC}) {
       edges {

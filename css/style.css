@@ -180,20 +180,26 @@ header nav a:hover {
 }
 
 .header2 {
-  height: 50px;
   width: 100%;
   margin-top: 24px;
   border-bottom: 1px solid #eaecef;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
 }
 
 .header2 .container-1 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 27% 73%;
-      grid-template-columns: 27% 73%;
+  -ms-grid-columns: 25% 75%;
+      grid-template-columns: 25% 75%;
   padding: 0 32px;
-  margin: 0 4rem;
   width: 100%;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
   height: 50px;
 }
 
@@ -204,6 +210,7 @@ header nav a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 16px;
 }
 
 .header2 .container-1 .other .underlineNav {
@@ -269,8 +276,12 @@ header nav a:hover {
   -ms-grid-columns: 25% 75%;
       grid-template-columns: 25% 75%;
   width: 100%;
-  height: 600px;
-  padding: 0 5rem;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 32px;
+  border-bottom: 1px solid #eaecef;
+  margin-bottom: 4rem;
 }
 
 .body .profile {
@@ -282,7 +293,6 @@ header nav a:hover {
 }
 
 .body .profile .contain .profile-details {
-  margin-top: -2rem;
   position: relative;
 }
 
@@ -292,6 +302,9 @@ header nav a:hover {
 }
 
 .body .profile .contain .profile-details a img {
+  position: absolute;
+  top: -275px;
+  z-index: 5;
   width: 100%;
   border-radius: 50% !important;
   display: inline-block;
@@ -308,9 +321,9 @@ header nav a:hover {
 
 .body .profile .contain .profile-details a .edit {
   position: absolute;
-  bottom: 35%;
-  left: 100%;
-  z-index: 2;
+  bottom: 110%;
+  left: 102%;
+  z-index: 6;
   width: 38px;
   height: 38px;
   margin-bottom: 32px;
@@ -330,8 +343,13 @@ header nav a:hover {
           box-shadow: 0 1px 0 rgba(27, 31, 35, 0.171);
 }
 
+.body .profile .contain .profile-details #role {
+  color: #24292e;
+}
+
 .body .profile .contain .profile-details .name {
   padding: 16px 0;
+  margin-top: 15rem;
 }
 
 .body .profile .contain .profile-details .name .realname {
@@ -351,6 +369,7 @@ header nav a:hover {
 
 .body .repos {
   padding: 0 16px;
+  margin-bottom: 5rem;
 }
 
 .body .repos form {
@@ -421,6 +440,7 @@ header nav a:hover {
   padding: 0 24px 0 0;
   margin-bottom: 15px;
   font-size: 14px;
+  color: #586069;
 }
 
 .body .repos .repo .single-repo .repo-details {
@@ -436,6 +456,11 @@ header nav a:hover {
   font-size: 12px;
   margin-bottom: 0 !important;
   margin-left: 5px;
+}
+
+.body .repos .repo .single-repo .repo-details .octicon-repo-forked,
+.body .repos .repo .single-repo .repo-details .octicon-star {
+  fill: #1b1f2362;
 }
 
 .body .repos .repo .single-repo .repo-details .repo-language-color {

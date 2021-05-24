@@ -138,22 +138,30 @@ header {
 }
 
 .header2 {
-	height: 50px;
+	// height: 50px;
 	width: 100%;
 	margin-top: 24px;
 	border-bottom: 1px solid #eaecef;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	background-color: white;
 	.container-1 {
 		display: grid;
-		grid-template-columns: 27% 73%;
+		grid-template-columns: 25% 75%;
 		padding: 0 32px;
-		margin: 0 4rem;
+		// margin: 0 4rem;
 		width: 100%;
+		max-width: 1280px;
+		margin-right: auto;
+		margin-left: auto;
 		height: 50px;
 
 		.other {
 			display: flex;
 			// justify-content: center;
 			align-items: center;
+			padding: 0 16px;
 
 			.underlineNav {
 				padding: 8px 16px;
@@ -213,8 +221,13 @@ header {
 	display: grid;
 	grid-template-columns: 25% 75%;
 	width: 100%;
-	height: 600px;
-	padding: 0 5rem;
+	max-width: 1280px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0 32px;
+	border-bottom: 1px solid #eaecef;
+	margin-bottom: 4rem;
+
 	// margin: 0 4rem;
 
 	.profile {
@@ -225,12 +238,16 @@ header {
 				color: gray;
 			}
 			.profile-details {
-				margin-top: -2rem;
+				// margin-top: -2.2rem;
 				position: relative;
+				// z-index: 5 !important;
 				a {
 					width: 100%;
 					height: 100%;
 					img {
+						position: absolute;
+						top: -275px;
+						z-index: 5;
 						width: 100%;
 						border-radius: 50% !important;
 						display: inline-block;
@@ -245,9 +262,9 @@ header {
 
 					.edit {
 						position: absolute;
-						bottom: 35%;
-						left: 100%;
-						z-index: 2;
+						bottom: 110%;
+						left: 102%;
+						z-index: 6;
 						width: 38px;
 						height: 38px;
 						margin-bottom: 32px;
@@ -261,8 +278,13 @@ header {
 					}
 				}
 
+				#role {
+					color: #24292e;
+				}
+
 				.name {
 					padding: 16px 0;
+					margin-top: 15rem;
 					.realname {
 						font-size: 26px;
 						line-height: 1.25;
@@ -283,6 +305,7 @@ header {
 
 	.repos {
 		padding: 0 16px;
+		margin-bottom: 5rem;
 		form {
 			width: 100% !important;
 			padding: 16px 0;
@@ -338,6 +361,7 @@ header {
 					padding: 0 24px 0 0;
 					margin-bottom: 15px;
 					font-size: 14px;
+					color: #586069;
 				}
 
 				.repo-details {
@@ -347,6 +371,11 @@ header {
 						font-size: 12px;
 						margin-bottom: 0 !important;
 						margin-left: 5px;
+					}
+
+					.octicon-repo-forked,
+					.octicon-star {
+						fill: #1b1f2362;
 					}
 					.repo-language-color {
 						position: relative;
