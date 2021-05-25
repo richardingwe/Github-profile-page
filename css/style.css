@@ -434,6 +434,12 @@ header nav a:hover {
   color: #0366d6;
   margin-bottom: 5px;
   font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.body .repos .repo .single-repo h3:hover {
+  text-decoration: underline;
 }
 
 .body .repos .repo .single-repo p {
@@ -450,6 +456,22 @@ header nav a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.body .repos .repo .single-repo .repo-details .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.body .repos .repo .single-repo .repo-details .flex:hover p {
+  color: #0366d6;
+}
+
+.body .repos .repo .single-repo .repo-details .flex:hover .octicon-repo-forked,
+.body .repos .repo .single-repo .repo-details .flex:hover .octicon-star {
+  fill: #0366d6;
 }
 
 .body .repos .repo .single-repo .repo-details p {
