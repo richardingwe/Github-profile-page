@@ -15,6 +15,10 @@ header {
 	color: #ffffffb3;
 	font-size: 14px;
 
+	.menu {
+		display: none;
+	}
+
 	.octicon {
 		fill: white !important;
 	}
@@ -144,6 +148,10 @@ header {
 			width: 797px;
 			display: none;
 			align-items: center;
+		}
+
+		.menu {
+			display: block;
 		}
 
 		.first {
