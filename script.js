@@ -4,21 +4,25 @@ const realName = document.querySelector('#realname');
 const userName = document.querySelector('#username');
 const counter = document.querySelector('#counter');
 const role = document.querySelector('#role');
+const smallRole = document.querySelector('#small-role');
 const repoList = document.querySelector('#repo-list');
+const smallImage = document.querySelector('#small-image1');
+const smallRealName = document.querySelector('#small-realname');
+const smallLogin = document.querySelector('#small-login');
 
 
 
 
 fetch('https://api.github.com/graphql', {
-  method: 'POST',
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: 'bearer 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'
-  },
-  body: JSON.stringify({
-    query: `
+	method: 'POST',
+	headers: {
+		"Content-Type": "application/json",
+		Authorization: 'bearer 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'
+	},
+	body: JSON.stringify({
+		query: `
                 query MyQuery {
-  user(login: "ireade") {
+  user(login: "richardingwe") {
     avatarUrl
     bio
     name
@@ -52,26 +56,30 @@ fetch('https://api.github.com/graphql', {
 
 
             `
-  })
+	})
 }).then(res => res.json()).then(data => {
-  console.log(data.data);
-  const result = data.data.user;
+	console.log(data.data);
+	const result = data.data.user;
 
-  avatar.src = result.avatarUrl;
-  avatarLink.href = result.avatarUrl;
-  realName.textContent = result.name;
-  userName.textContent = result.login;
-  counter.textContent = result.repositories.totalCount;
-  role.textContent = result.bio;
-  repos(result);
+	avatar.src = result.avatarUrl;
+	smallImage.src = result.avatarUrl;
+	avatarLink.href = result.avatarUrl;
+	realName.textContent = result.name;
+	smallRealName.textContent = result.name;
+	userName.textContent = result.login;
+	smallLogin.textContent = result.login;
+	counter.textContent = result.repositories.totalCount;
+	role.textContent = result.bio;
+	smallRole.textContent = result.bio;
+	repos(result);
 
 });
 
 function repos(result) {
-  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  result.repositories.edges.forEach(repo => {
+	let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	result.repositories.edges.forEach(repo => {
 
-    repoList.innerHTML += `<li class="single-repo">
+		repoList.innerHTML += `<li class="single-repo">
 							<div>
 								<h3>${repo.node.name}</h3>
 								<p>
@@ -141,5 +149,5 @@ function repos(result) {
 								</div>
 							</div>
 						</li>`;
-  });
+	});
 }

@@ -179,6 +179,107 @@ header nav a:hover {
   color: #ffffffb3;
 }
 
+@media screen and (max-width: 900px) {
+  header {
+    padding: 16px;
+  }
+  header .search-wrapper,
+  header nav {
+    width: 797px;
+    display: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .first {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .second div {
+    margin-right: 0;
+  }
+  header .profile-image,
+  header .summary {
+    display: none !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .profile-image .avatar-user,
+  header .summary .avatar-user {
+    border-radius: 50% !important;
+  }
+}
+
+.res-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 16px;
+  display: none;
+}
+
+.res-profile .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 24px;
+}
+
+.res-profile .profile .image {
+  width: 20%;
+  margin-right: 16px;
+}
+
+.res-profile .profile .image img {
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid #e1e4e8 !important;
+}
+
+.res-profile .profile .name {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.res-profile .profile .name h3 {
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.res-profile .profile .name span {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  color: #586069;
+}
+
+.res-profile .role {
+  color: #24292e;
+}
+
 .header2 {
   width: 100%;
   margin-top: 24px;
@@ -270,6 +371,175 @@ header nav a:hover {
   margin-left: 6px;
 }
 
+@media screen and (max-width: 900px) {
+  .header2 .container-1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 25% 75%;
+        grid-template-columns: 25% 75%;
+    padding: 0;
+    width: 100%;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 50px;
+  }
+  .header2 .container-1 .sm-image {
+    display: none;
+  }
+  .header2 .container-1 .other {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 16px;
+  }
+  .header2 .container-1 .other .underlineNav {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #24292e;
+    text-align: center;
+    white-space: nowrap;
+    background-color: initial;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header2 .container-1 .other .underlineNav .octicon-book,
+  .header2 .container-1 .other .underlineNav .octicon-project,
+  .header2 .container-1 .other .underlineNav .octicon-package {
+    fill: #959da5;
+  }
+  .header2 .container-1 .other .underlineNav .octicon {
+    margin-right: 7px;
+  }
+  .header2 .container-1 .other .underlineNav:hover {
+    border-bottom-color: #d1d5da;
+    outline: 1px dotted transparent;
+    outline-offset: -1px;
+  }
+  .header2 .container-1 .other .underlineNav.active {
+    font-weight: 600 !important;
+    border-bottom-color: #f9826c;
+    outline: 1px dotted transparent;
+    outline-offset: -1px;
+  }
+  .header2 .container-1 .other .underlineNav.active .Counter {
+    display: inline-block;
+    min-width: 20px;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: inherit;
+    text-align: center;
+    background-color: #d1d5da80;
+    border: 1px solid transparent;
+    border-radius: 2em;
+    margin-left: 6px;
+  }
+  .res-profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container-1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 25% 75%;
+        grid-template-columns: 25% 75%;
+    padding: 0;
+    width: 100%;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 50px;
+    overflow-x: auto;
+  }
+  .container-1 .sm-image {
+    display: none;
+  }
+  .container-1 .other {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 16px;
+  }
+  .container-1 .other .underlineNav {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #24292e;
+    text-align: center;
+    white-space: nowrap;
+    background-color: initial;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container-1 .other .underlineNav .octicon-book,
+  .container-1 .other .underlineNav .octicon-project,
+  .container-1 .other .underlineNav .octicon-package {
+    fill: #959da5;
+  }
+  .container-1 .other .underlineNav .octicon-book,
+  .container-1 .other .underlineNav .octicon-project,
+  .container-1 .other .underlineNav .octicon-package,
+  .container-1 .other .underlineNav .octicon-repo {
+    display: none;
+  }
+  .container-1 .other .underlineNav .octicon {
+    margin-right: 7px;
+  }
+  .container-1 .other .underlineNav:hover {
+    border-bottom-color: #d1d5da;
+    outline: 1px dotted transparent;
+    outline-offset: -1px;
+  }
+  .container-1 .other .underlineNav.active {
+    font-weight: 600 !important;
+    border-bottom-color: #f9826c;
+    outline: 1px dotted transparent;
+    outline-offset: -1px;
+  }
+  .container-1 .other .underlineNav.active .Counter {
+    display: inline-block;
+    min-width: 20px;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: inherit;
+    text-align: center;
+    background-color: #d1d5da80;
+    border: 1px solid transparent;
+    border-radius: 2em;
+    margin-left: 6px;
+  }
+}
+
 .body {
   display: -ms-grid;
   display: grid;
@@ -281,7 +551,6 @@ header nav a:hover {
   margin-left: auto;
   padding: 0 32px;
   border-bottom: 1px solid #eaecef;
-  margin-bottom: 4rem;
 }
 
 .body .profile {
@@ -341,6 +610,32 @@ header nav a:hover {
           align-items: center;
   -webkit-box-shadow: 0 1px 0 rgba(27, 31, 35, 0.171);
           box-shadow: 0 1px 0 rgba(27, 31, 35, 0.171);
+}
+
+@media screen and (max-width: 1200px) {
+  .body .profile .contain .profile-details a .edit {
+    position: absolute;
+    bottom: 130%;
+    left: 100%;
+    z-index: 6;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 32px;
+    margin-left: -40px;
+    background-color: white;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 0 1px 0 rgba(27, 31, 35, 0.171);
+            box-shadow: 0 1px 0 rgba(27, 31, 35, 0.171);
+  }
 }
 
 .body .profile .contain .profile-details #role {
@@ -482,7 +777,7 @@ header nav a:hover {
 
 .body .repos .repo .single-repo .repo-details .octicon-repo-forked,
 .body .repos .repo .single-repo .repo-details .octicon-star {
-  fill: #1b1f2362;
+  fill: #586069;
 }
 
 .body .repos .repo .single-repo .repo-details .repo-language-color {
@@ -525,5 +820,119 @@ header nav a:hover {
 }
 
 .body .repos .repo .single-repo .star div svg {
-  fill: #1b1f2362;
+  fill: #586069;
+}
+
+@media screen and (max-width: 900px) {
+  .body {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+    padding: 0 16px;
+  }
+  .body .profile {
+    display: none;
+  }
+  .body .contain {
+    display: none;
+  }
+  .body .repos {
+    padding: 0;
+  }
+}
+
+footer {
+  width: 100%;
+  max-width: 1280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+
+footer svg {
+  fill: #d1d5da;
+}
+
+footer svg:hover {
+  fill: #586069;
+}
+
+footer ul {
+  width: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer ul li {
+  list-style: none;
+  font-size: 12px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #0366d6;
+  cursor: pointer;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    width: 100%;
+    max-width: 1280px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer svg {
+    display: none;
+  }
+  footer ul {
+    width: 50vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    width: 100%;
+    max-width: 1280px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer svg {
+    display: none;
+  }
+  footer ul {
+    width: 70vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
