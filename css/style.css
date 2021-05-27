@@ -761,6 +761,7 @@ header nav a:hover {
       flex-shrink: 0;
   -webkit-box-shadow: 0 0 0 1px #00000000;
           box-shadow: 0 0 0 1px #00000000;
+  border: 1px solid #e1e4e8;
 }
 
 .body .profile .contain .profile-details a .edit {

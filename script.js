@@ -45,66 +45,65 @@ function loadDetails(userLogin) {
 		method: 'POST',
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: 'bearer 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'
+			Authorization: 'bearer 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' //please generate token with your github profile from settings>>developers>>access
 		},
 		body: JSON.stringify({
 			query: `
                 query MyQuery {
-  user(login: "${userLogin}" ) {
-    avatarUrl
-    bio
-    name
-    repositories(first: 20, orderBy: {field: UPDATED_AT, direction: DESC}) {
-      edges {
-        node {
-          forkCount
-          languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
-            edges {
-              node {
-                name
-                color
-              }
-            }
-          }
-          name
-          updatedAt
-          description
-          stargazerCount
-        }
-      }
-      totalCount
-    }
-    login
-  }
-}
+					user(login: "${userLogin}" ) {
+						avatarUrl
+						bio
+						name
+						repositories(first: 20, orderBy: {field: UPDATED_AT, direction: DESC}) {
+						edges {
+							node {
+							forkCount
+							languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
+								edges {
+								node {
+									name
+									color
+								}
+								}
+							}
+							name
+							updatedAt
+							description
+							stargazerCount
+							}
+						}
+						totalCount
+						}
+						login
+					}
+				}
             `
 		})
 	}).then(res => res.json()).then(data => {
-
 		profileBody.style.display = 'block';
-
-		// console.log(data.data);
 		const result = data.data.user;
-
-		const { avatarUrl, name, login, bio, repositories: { totalCount } } = result;
-
-		avatar.src = avatarUrl;
-		smallImage.src = avatarUrl;
-		avatarLink.href = avatarUrl;
-		realName.textContent = name;
-		smallRealName.textContent = name;
-		userName.textContent = login;
-		smallLogin.textContent = login;
-		counter.textContent = totalCount;
-		role.textContent = bio;
-		smallRole.textContent = bio;
+		getDetails(result);
 		repos(result);
 
 	}).catch(err => {
 		return err;
 	});
-
 	return result;
+}
+
+function getDetails(result) {
+	const { avatarUrl, name, login, bio, repositories: { totalCount } } = result;
+
+	avatar.src = avatarUrl;
+	smallImage.src = avatarUrl;
+	avatarLink.href = avatarUrl;
+	realName.textContent = name;
+	smallRealName.textContent = name;
+	userName.textContent = login;
+	smallLogin.textContent = login;
+	counter.textContent = totalCount;
+	role.textContent = bio;
+	smallRole.textContent = bio;
 }
 
 function repos(result) {
