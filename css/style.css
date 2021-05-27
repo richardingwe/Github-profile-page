@@ -901,7 +901,11 @@ header nav a:hover {
   border-bottom: 1px solid #eaecef;
 }
 
-.body .repos .repo .single-repo h3 {
+.body .repos .repo .single-repo a {
+  text-decoration: none;
+}
+
+.body .repos .repo .single-repo a h3 {
   color: #0366d6;
   margin-bottom: 5px;
   font-size: 20px;
@@ -909,7 +913,7 @@ header nav a:hover {
   cursor: pointer;
 }
 
-.body .repos .repo .single-repo h3:hover {
+.body .repos .repo .single-repo a h3:hover {
   text-decoration: underline;
 }
 
@@ -1118,5 +1122,8 @@ footer ul li a:hover {
     width: 70vw;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+  footer ul li {
+    margin: 0 3px;
   }
 }

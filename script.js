@@ -1,7 +1,7 @@
 const avatar = document.querySelector('#profile-photo');
 const avatarLink = document.querySelector('#profile-photo-link');
 const realName = document.querySelector('#realname');
-const userName = document.querySelector('#username');
+const userName = document.querySelector('#username-login');
 const counter = document.querySelector('#counter');
 const role = document.querySelector('#role');
 const smallRole = document.querySelector('#small-role');
@@ -45,7 +45,7 @@ function loadDetails(userLogin) {
 		method: 'POST',
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: 'bearer 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' //please generate token with your github profile from settings>>developers>>access
+			Authorization: 'bearer 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' //please generate token with your github profile from settings>>developers>>access
 		},
 		body: JSON.stringify({
 			query: `
@@ -112,7 +112,7 @@ function repos(result) {
 
 		repoList.innerHTML += `<li class="single-repo">
 							<div>
-								<h3>${repo.node.name}</h3>
+								<a href='javascript:void(0)'><h3>${repo.node.name}</h3></a>
 								<p class='p'>
 									${repo.node.description || ''}
 								</p>
