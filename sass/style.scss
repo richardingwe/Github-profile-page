@@ -635,6 +635,9 @@ header {
 					}
 				}
 
+				// .p {
+				// word-break: break-all;
+				// }
 				p {
 					padding: 0 24px 0 0;
 					margin-bottom: 15px;
@@ -649,7 +652,6 @@ header {
 					.flex {
 						display: flex;
 						cursor: pointer;
-
 						&:hover {
 							p {
 								color: #0366d6;
@@ -728,6 +730,17 @@ header {
 
 		.repos {
 			padding: 0;
+
+			.repo {
+				.single-repo {
+					align-items: center;
+				}
+				.repo-details {
+					p {
+						padding-right: 10px;
+					}
+				}
+			}
 		}
 	}
 }

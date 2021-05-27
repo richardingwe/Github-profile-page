@@ -845,6 +845,14 @@ header nav a:hover {
   .body .repos {
     padding: 0;
   }
+  .body .repos .repo .single-repo {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .body .repos .repo .repo-details p {
+    padding-right: 10px;
+  }
 }
 
 footer {

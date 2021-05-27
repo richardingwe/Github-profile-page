@@ -17,12 +17,12 @@ fetch('https://api.github.com/graphql', {
 	method: 'POST',
 	headers: {
 		"Content-Type": "application/json",
-		Authorization: 'bearer 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'
+		Authorization: 'bearer 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'
 	},
 	body: JSON.stringify({
 		query: `
                 query MyQuery {
-  user(login: "richardingwe") {
+  user(login: "ireade") {
     avatarUrl
     bio
     name
@@ -37,9 +37,6 @@ fetch('https://api.github.com/graphql', {
                 color
               }
             }
-          }
-          codeOfConduct {
-            name
           }
           name
           updatedAt
@@ -58,19 +55,21 @@ fetch('https://api.github.com/graphql', {
             `
 	})
 }).then(res => res.json()).then(data => {
-	console.log(data.data);
+	// console.log(data.data);
 	const result = data.data.user;
 
-	avatar.src = result.avatarUrl;
-	smallImage.src = result.avatarUrl;
-	avatarLink.href = result.avatarUrl;
-	realName.textContent = result.name;
-	smallRealName.textContent = result.name;
-	userName.textContent = result.login;
-	smallLogin.textContent = result.login;
-	counter.textContent = result.repositories.totalCount;
-	role.textContent = result.bio;
-	smallRole.textContent = result.bio;
+	const { avatarUrl, name, login, bio, repositories: { totalCount } } = result;
+
+	avatar.src = avatarUrl;
+	smallImage.src = avatarUrl;
+	avatarLink.href = avatarUrl;
+	realName.textContent = name;
+	smallRealName.textContent = name;
+	userName.textContent = login;
+	smallLogin.textContent = login;
+	counter.textContent = totalCount;
+	role.textContent = bio;
+	smallRole.textContent = bio;
 	repos(result);
 
 });
@@ -82,7 +81,7 @@ function repos(result) {
 		repoList.innerHTML += `<li class="single-repo">
 							<div>
 								<h3>${repo.node.name}</h3>
-								<p>
+								<p class='p'>
 									${repo.node.description || ''}
 								</p>
 								<div class="repo-details">
