@@ -9,20 +9,48 @@ const repoList = document.querySelector('#repo-list');
 const smallImage = document.querySelector('#small-image1');
 const smallRealName = document.querySelector('#small-realname');
 const smallLogin = document.querySelector('#small-login');
+const loginInput = document.querySelector('.form-control');
+const loginBtn = document.querySelector('#btn');
+const loginSection = document.querySelector('#login');
+const bodyy = document.querySelector('body');
+const profileBody = document.querySelector('#body');
+const flashMessage = document.querySelector('.flash-message');
+const flashMessageText = document.querySelector('.flash-message .message p');
+const closeFlashMessage = document.querySelector('.flash-message .close');
 
 
 
 
-fetch('https://api.github.com/graphql', {
-	method: 'POST',
-	headers: {
-		"Content-Type": "application/json",
-		Authorization: 'bearer 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'
-	},
-	body: JSON.stringify({
-		query: `
+loginBtn.onclick = async (e) => {
+	e.preventDefault();
+	if (loginInput.value === '') {
+		flashMessage.style.display = 'flex';
+		flashMessageText.textContent = 'Username input is empty';
+		return;
+	}
+	const error = await loadDetails(loginInput.value);
+	if (error) {
+		flashMessageText.textContent = 'Username does not exist';
+		flashMessage.style.display = 'flex';
+		return;
+	}
+	loginSection.style.display = 'none';
+	bodyy.style.overflow = 'auto';
+};
+
+
+
+function loadDetails(userLogin) {
+	const result = fetch('https://api.github.com/graphql', {
+		method: 'POST',
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: 'bearer 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'
+		},
+		body: JSON.stringify({
+			query: `
                 query MyQuery {
-  user(login: "ireade") {
+  user(login: "${userLogin}" ) {
     avatarUrl
     bio
     name
@@ -49,30 +77,35 @@ fetch('https://api.github.com/graphql', {
     login
   }
 }
-
-
-
             `
-	})
-}).then(res => res.json()).then(data => {
-	// console.log(data.data);
-	const result = data.data.user;
+		})
+	}).then(res => res.json()).then(data => {
 
-	const { avatarUrl, name, login, bio, repositories: { totalCount } } = result;
+		profileBody.style.display = 'block';
 
-	avatar.src = avatarUrl;
-	smallImage.src = avatarUrl;
-	avatarLink.href = avatarUrl;
-	realName.textContent = name;
-	smallRealName.textContent = name;
-	userName.textContent = login;
-	smallLogin.textContent = login;
-	counter.textContent = totalCount;
-	role.textContent = bio;
-	smallRole.textContent = bio;
-	repos(result);
+		// console.log(data.data);
+		const result = data.data.user;
 
-});
+		const { avatarUrl, name, login, bio, repositories: { totalCount } } = result;
+
+		avatar.src = avatarUrl;
+		smallImage.src = avatarUrl;
+		avatarLink.href = avatarUrl;
+		realName.textContent = name;
+		smallRealName.textContent = name;
+		userName.textContent = login;
+		smallLogin.textContent = login;
+		counter.textContent = totalCount;
+		role.textContent = bio;
+		smallRole.textContent = bio;
+		repos(result);
+
+	}).catch(err => {
+		return err;
+	});
+
+	return result;
+}
 
 function repos(result) {
 	let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -150,3 +183,7 @@ function repos(result) {
 						</li>`;
 	});
 }
+
+closeFlashMessage.onclick = () => {
+	flashMessage.style.display = 'none';
+};

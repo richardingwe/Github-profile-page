@@ -6,6 +6,174 @@
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
+body {
+  overflow: hidden;
+}
+
+#body {
+  display: none;
+}
+
+#login {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#login .logo {
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+#login .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#login .form .flash-message {
+  display: none;
+  min-width: 266px;
+  padding: 15px 20px;
+  margin: 32px auto 10px;
+  font-size: 13px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #24292e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffe3e6), to(#ffe3e6));
+  background-image: linear-gradient(#ffe3e6, #ffe3e6);
+  border-color: #9e1c2333;
+}
+
+#login .form .flash-message .message {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 13px;
+}
+
+#login .form .flash-message .message p {
+  padding: 0;
+  margin: 0;
+}
+
+#login .form .flash-message .message .close {
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#login .form .flash-message .message .close svg {
+  fill: #9e1c2399;
+}
+
+#login .form h1 {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+}
+
+#login .form form {
+  margin-top: 16px;
+  padding: 20px;
+  font-size: 14px;
+  background-color: #f6f8fa;
+  border: 1px solid #eaecef;
+  border-top: 0;
+  border-radius: 6px;
+  min-width: 266px;
+}
+
+#login .form form label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 400;
+  text-align: left;
+}
+
+#login .form form .form-control {
+  display: block;
+  width: 100%;
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #24292e;
+  -webkit-box-shadow: inset 0 0 0 32px var(#fff) !important;
+          box-shadow: inset 0 0 0 32px var(#fff) !important;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  outline: none;
+}
+
+#login .form form .btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #2ea439;
+  border-color: #1b1f2326;
+  -webkit-box-shadow: var(0 1px 0 rgba(27, 31, 35, 0.1)), var(inset 0 1px 0 hlsa(0, 0%, 100%, 0.03));
+          box-shadow: var(0 1px 0 rgba(27, 31, 35, 0.1)), var(inset 0 1px 0 hlsa(0, 0%, 100%, 0.03));
+  display: inline-block;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid;
+  border-radius: 6px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 header {
   padding: 16px 32px;
   background-color: #24292e;
