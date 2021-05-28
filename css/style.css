@@ -778,14 +778,41 @@ header nav a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-shadow: 0 1px 0 rgba(27, 31, 35, 0.171);
           box-shadow: 0 1px 0 rgba(27, 31, 35, 0.171);
+  color: #586069;
+  font-size: 12px;
+  border: 1px solid #e1e4e8;
+  -webkit-transition: 10ms;
+  transition: 10ms;
+}
+
+.body .profile .contain .profile-details a .edit svg {
+  fill: #586069;
+}
+
+.body .profile .contain .profile-details a .edit span {
+  display: none;
+}
+
+.body .profile .contain .profile-details a .edit:hover {
+  width: 95px;
+  border-radius: 2em;
+  padding: 0 7px;
+}
+
+.body .profile .contain .profile-details a .edit:hover span {
+  display: block;
+  color: #0366d6;
+}
+
+.body .profile .contain .profile-details a .edit:hover svg {
+  fill: #0366d6;
 }
 
 @media screen and (max-width: 1200px) {

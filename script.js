@@ -45,7 +45,7 @@ function loadDetails(userLogin) {
 		method: 'POST',
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: 'bearer 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' //please generate token with your github profile from settings>>developers>>access
+			Authorization: 'bearer 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' //please generate token with your github profile from settings>>developers>>access
 		},
 		body: JSON.stringify({
 			query: `
