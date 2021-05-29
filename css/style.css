@@ -174,9 +174,84 @@ body {
           appearance: none;
 }
 
+.show {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 header {
   padding: 16px 32px;
   background-color: #24292e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #ffffffb3;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+}
+
+header .one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .res-nav {
+  width: 100%;
+  margin-top: 1rem;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .res-nav .search-wrapper {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+header .res-nav .search-wrapper form {
+  width: 100% !important;
+}
+
+header .res-nav .search-wrapper form .label {
+  border: 1px solid #444d56;
+  min-height: 28px;
+  width: 100% !important;
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border-radius: 6px;
+  outline: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,12 +261,61 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: #ffffffb3;
-  font-size: 14px;
+  color: white;
+}
+
+header .res-nav .search-wrapper form .label input {
+  display: table-cell;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: white !important;
+  outline: none;
+}
+
+header .res-nav nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+header .res-nav nav a {
+  width: 100%;
+  padding: 8px 0;
+  border-top: 1px solid #ffffff26;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .res-nav nav a img,
+header .res-nav nav a svg {
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
 header .menu {
   display: none;
+  cursor: pointer;
+}
+
+header .menu svg:hover {
+  fill: #5a5a5af1;
 }
 
 header .octicon {
@@ -219,6 +343,10 @@ header .second {
 
 header .second div {
   margin-right: 16px;
+}
+
+header .second .profile-image {
+  margin-right: 0;
 }
 
 header .second .notification {
