@@ -251,7 +251,7 @@ header {
 	}
 
 	.first {
-		width: 797px;
+		width: 100%;
 		display: flex;
 		align-items: center;
 	}
@@ -318,6 +318,7 @@ header {
 		position: relative;
 		display: flex;
 		align-items: center;
+		transition: 200ms ease;
 
 		form {
 			width: 100% !important;

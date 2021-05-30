@@ -323,7 +323,7 @@ header .octicon {
 }
 
 header .first {
-  width: 797px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,6 +419,8 @@ header .search-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 200ms ease;
+  transition: 200ms ease;
 }
 
 header .search-wrapper form {

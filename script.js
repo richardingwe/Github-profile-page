@@ -19,10 +19,10 @@ const flashMessageText = document.querySelector('.flash-message .message p');
 const closeFlashMessage = document.querySelector('.flash-message .close');
 const menu = document.querySelector('#menu');
 const resNav = document.querySelector('#res-nav');
-
-menu.onclick = () => {
-	resNav.classList.toggle('show');
-};
+const search = document.querySelector('#search');
+const searchWrapper = document.querySelector('#search-wrapper');
+const searchWrapperImg = document.querySelector('#search-wrapper img');
+const searchWrapperLabel = document.querySelector('#search-wrapper .label');
 
 
 
@@ -51,7 +51,7 @@ function loadDetails(userLogin) {
 		method: 'POST',
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: 'bearer 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' //please generate token with your github profile from settings>>developers>>access
+			Authorization: 'bearer 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' //please generate token with your github profile from settings>>developers>>access
 		},
 		body: JSON.stringify({
 			query: `
@@ -189,6 +189,22 @@ function repos(result) {
 	});
 }
 
+menu.onclick = () => {
+	resNav.classList.toggle('show');
+};
+
+search.addEventListener('focusin', () => {
+	searchWrapper.style.width = '538px';
+	searchWrapperImg.style.display = 'none';
+	searchWrapperLabel.style.border = '1px solid #0366d6';
+});
+search.addEventListener('focusout', () => {
+	searchWrapper.style.width = '272px';
+	searchWrapperImg.style.display = 'block';
+	searchWrapperLabel.style.border = '1px solid #444d56';
+});
+
 closeFlashMessage.onclick = () => {
 	flashMessage.style.display = 'none';
 };
+
